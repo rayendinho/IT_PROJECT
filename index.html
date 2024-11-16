@@ -7,155 +7,152 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #1e1e1e;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
 
+    .msger {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        max-width: 600px;
+        margin: auto;
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: #2c2c2c;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
 
+    .msger-header {
+        background-color: #3c3c3c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        font-size: 22px;
+        color: #ffffff;
+    }
+
+    .msger-chat {
+        flex: 1;
+        overflow-y: auto;
+        padding: 10px;
+        background-color: #2c2c2c;
+    }
+
+    .msg {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .msg-img {
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .msg-bubble {
+        background-color: #444444;
+        border-radius: 10px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        max-width: 70%;
+        word-wrap: break-word;
+        position: relative;
+    }
+
+    .msg-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+        font-size: 12px;
+        color: #888888;
+    }
+
+    .msg-info-time {
+        margin-left: 10px;
+    }
+
+    .msg-text {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .msger-inputarea {
+        display: flex;
+        padding: 10px;
+        background-color: #3c3c3c;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .msger-input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        font-size: 16px;
+        border-radius: 5px 0 0 5px;
+        background-color: #444444;
+        color: #ffffff;
+    }
+
+    .msger-send-btn {
+        padding: 10px;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        background-color: #555555;
+        color: #ffffff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .msger-send-btn:hover {
+        background-color: #777777;
+    }
+
+    .right-msg {
+        justify-content: flex-end;
+    }
+
+    .right-msg .msg-bubble {
+        background-color: #555555;
+        align-self: flex-end;
+    }
+
+    .left-msg {
+        justify-content: flex-start;
+    }
+
+    .left-msg .msg-bubble {
+        background-color: #444444;
+        align-self: flex-start;
+    }
+
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    @media (min-width: 601px) and (max-width: 900px) {
         .msger {
-            display: flex;
-            flex-direction: column;
-            height: 100vh; /* Adjust height as needed */
-            max-width: 600px; /* Adjust maximum width */
-            margin: auto;
-            overflow: hidden;
-        }
-
-        .msger-header {
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center; /* Center align title */
-            align-items: center;
-            padding: 10px 20px;
-            font-family: 'Russo One', sans-serif;
-            font-size: 22px;
-        }
-
-        .msger-header-title {
-            font-size: 20px;
-        }
-
-        .msger-chat {
-            flex: 1;
-            overflow-y: auto;
-            padding: 10px;
-        }
-
-        .msg {
-            display: flex;
-            margin-bottom: 10px; /* Adjust spacing between messages */
-        }
-
-        .msg-img {
-            width: 30px; /* Adjust size of user image */
-            height: 30px;
-            background-size: cover;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .msg-bubble {
-            background-color: #fff; /* Light blue background color for messages */
-            border-radius: 10px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-            max-width: 70%; /* Limit maximum width of message bubble */
-            word-wrap: break-word;
-            position: relative; /* Ensure relative positioning for child elements */
-        }
-
-        .msg-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5px;
-            font-family: Tahoma;
-            font-size: 12px;
-            color: #555; /* Light gray color for message info */
-        }
-
-        .msg-info-time {
-            margin-left: 10px; /* Adjust spacing */
-        }
-
-        .msg-text {
-            font-size: 16px;
-            max-width: 100%; /* Ensure text doesn't overflow message bubble */
-        }
-
-        .msger-inputarea {
-            display: flex;
-            padding: 10px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .msger-input {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            font-size: 16px;
-            border-radius: 5px 0 0 5px;
+            height: 100vh;
+            width: 100%;
+            border-radius: 0;
+            padding: 0 10px;
         }
 
         .msger-send-btn {
-            padding: 10px;
-            border: none;
-            border-radius: 0 5px 5px 0;
-            background-color: #A5C9FF;
-            color: #000;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            padding: 0 20px;
         }
-
-            .msger-send-btn:hover {
-                background-color: #555;
-            }
-
-
-        /* User message style */
-        .right-msg {
-            justify-content: flex-end;
-        }
-
-            .right-msg .msg-bubble {
-                background-color: #A5C9FF; /* Light blue background color for user messages */
-                align-self: flex-end; /* Align user messages to the right */
-            }
-
-        /* Bot message style */
-        .left-msg {
-            justify-content: flex-start;
-        }
-
-            .left-msg .msg-bubble {
-                background-color: #e3e3e3; /* Light blue background color for bot messages */
-                align-self: flex-start; /* Align bot messages to the left */
-            }
-
-        /* Clearfix to handle floating elements */
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-
-        @media (min-width: 601em) and (max-width: 900em) {
-            .msger {
-                height: 100vh;
-                width: 100%;
-                border-radius: 0;
-                padding: 0 10px;
-            }
-
-            .msger-send-btn {
-                padding: 0 20px;
-            }
-        }
+    }
     </style>
 </head>
 <body>
@@ -171,13 +168,10 @@
         </main>
 
         <form class="msger-inputarea">
-            <input type="text"
-                   class="msger-input"
-                   placeholder="Enter your message..." />
+            <input type="text" class="msger-input" placeholder="Enter your message..." />
             <button type="submit" class="msger-send-btn">&#10140;</button>
         </form>
     </section>
-
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -187,12 +181,12 @@
     // Function to append a message to the chat window
     function appendMessage(name, side, text) {
         const msgHTML = `
-            <div class="msg ${side}">
-                <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)"></div>
-                <div class="msg-bubble">
-                    <div class="msg-text">${text}</div>
-                </div>
+        <div class="msg ${side}">
+            <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)"></div>
+            <div class="msg-bubble">
+                <div class="msg-text">${text}</div>
             </div>
+        </div>
         `;
         chat.insertAdjacentHTML("beforeend", msgHTML);
         chat.scrollTop = chat.scrollHeight;
