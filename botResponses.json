@@ -1,0 +1,159 @@
+[
+    {
+        "response_type": "greeting",
+        "user_input": [ "hello", "hi", "hey" ],
+        "bot_response": "Hello! How can I assist you today?",
+        "required_words": []
+    },
+    {
+        "response_type": "status_check",
+        "user_input": [ "how are you", "how are you doing" ],
+        "bot_response": "I'm just a bot, but I'm here to help! How can I assist you today?",
+        "required_words": []
+    },
+    {
+        "response_type": "introduction",
+        "user_input": [ "what is your name", "who are you" ],
+        "bot_response": "I am StackBot, your virtual assistant!",
+        "required_words": []
+    },
+    {
+        "response_type": "capabilities",
+        "user_input": [ "what can you do", "how can you help me" ],
+        "bot_response": "I can help you with general questions, provide information, and keep you company.",
+        "required_words": []
+    },
+    {
+        "response_type": "joke",
+        "user_input": [ "tell me a joke", "joke" ],
+        "bot_response": "Why don't scientists trust atoms? Because they make up everything!",
+        "required_words": [ "joke" ]
+    },
+    {
+        "response_type": "weather",
+        "user_input": [ "what is the weather like", "weather" ],
+        "bot_response": "I'm not equipped to check the weather, but you can look it up online!",
+        "required_words": [ "weather" ]
+    },
+    {
+        "response_type": "gratitude",
+        "user_input": [ "thank you", "thanks" ],
+        "bot_response": "You're welcome! If you have any more questions, feel free to ask.",
+        "required_words": []
+    },
+    {
+        "response_type": "farewell",
+        "user_input": [ "bye", "goodbye", "see you" ],
+        "bot_response": "Goodbye! Have a great day!",
+        "required_words": []
+    },
+    {
+        "response_type": "order_menu",
+        "user_input": [ "menu", "food", "options" ],
+        "bot_response": "Sure! We have pizza, burgers, salads. What would you like to order?",
+        "required_words": [ "menu" ],
+        "required_previous_question": null
+    },
+    {
+        "response_type": "order_pizza",
+        "user_input": [ "pizza", "burgers", "burger", "salads", "salad" ],
+        "bot_response": "Great choice! What toppings would you like on that?",
+        "required_words": [],
+        "required_previous_question": "order_menu"
+    },
+    {
+        "response_type": "order_toppings",
+        "user_input": [ "pepperoni", "mushrooms", "onions", "olives" ],
+        "bot_response": "Got it. Would you like a drink with that?",
+        "required_words": [],
+        "required_previous_question": "order_pizza"
+    },
+    {
+        "response_type": "order_drink",
+        "user_input": [ "soda", "water", "juice" ],
+        "bot_response": "Okay, one drink. Anything else?",
+        "required_words": [],
+        "required_previous_question": "order_toppings"
+    },
+    {
+        "response_type": "order_change",
+        "user_input": [ "change order", "changed my mind", "change" ],
+        "bot_response": "Sure, what would you like for main dish instead?",
+        "required_words": [],
+        "required_previous_question": "order_pizza"
+    },
+    {
+        "response_type": "order_confirmation",
+        "user_input": [ "no", "that's all", "nothing else" ],
+        "bot_response": "Perfect! Your order will be ready in 30 minutes.",
+        "required_words": [],
+        "required_previous_question": "order_drink"
+    },
+    {
+        "response_type": "workout_start",
+        "user_input": [ "workout", "exercise", "plan" ],
+        "bot_response": "Sure, let's start your workout plan. What are your fitness goals?",
+        "required_words": [ "workout" ]
+    },
+    {
+        "response_type": "fitness_goals",
+        "user_input": [ "build muscle", "lose weight", "stay fit" ],
+        "bot_response": "Awesome! How many days a week can you work out?",
+        "required_words": []
+    },
+    {
+        "response_type": "workout_days",
+        "user_input": [ "1 day", "2 days", "3 days", "4 days", "5 days" ],
+        "bot_response": "Great! Let's plan for {workout_days} of training. Do you have any specific preferences or equipment?",
+        "required_words": []
+    },
+    {
+        "response_type": "workout_equipment",
+        "user_input": [ "dumbbells", "no equipment", "resistance bands" ],
+        "bot_response": "Perfect. We'll focus on {equipment} exercises. Ready to start with the first day?",
+        "required_words": []
+    },
+    {
+        "response_type": "workout_day1",
+        "user_input": [ "yes", "ready" ],
+        "bot_response": "Day 1: Full Body Workout. Do 3 sets of each exercise: 10 push-ups, 15 squats, 10 dumbbell rows, 15 lunges.",
+        "required_words": [ "ready" ]
+    },
+    {
+        "response_type": "workout_day2",
+        "user_input": [ "day 2" ],
+        "bot_response": "Day 2: Upper Body. Do 3 sets of each exercise: 12 dumbbell shoulder press, 15 bicep curls, 12 tricep dips, 15 dumbbell flyes.",
+        "required_words": []
+    },
+    {
+        "response_type": "workout_day3",
+        "user_input": [ "day 3" ],
+        "bot_response": "Day 3: Lower Body. Do 3 sets of each exercise: 15 goblet squats, 12 dumbbell deadlifts, 15 calf raises, 12 dumbbell lunges.",
+        "required_words": []
+    },
+    {
+        "response_type": "workout_day4",
+        "user_input": [ "day 4" ],
+        "bot_response": "Day 4: Core and Cardio. Do 3 sets of each exercise: 20 crunches, 15 leg raises, 1-minute plank, 20 mountain climbers.",
+        "required_words": []
+    },
+    {
+        "response_type": "workout_progress",
+        "user_input": [ "progress", "track" ],
+        "bot_response": "You can keep a workout journal or use a fitness app to track your exercises, sets, and reps. Consistency is key!",
+        "required_words": [ "progress" ]
+    },
+    {
+        "response_type": "workout_motivation",
+        "user_input": [ "motivate", "stay motivated", "motivation" ],
+        "bot_response": "Set realistic goals, track your progress, and celebrate small achievements. Finding a workout buddy can also help keep you accountable.",
+        "required_words": [ "motivation" ]
+    },
+    {
+        "response_type": "unknown",
+        "user_input": [],
+        "bot_response": "Can you give more info?.",
+        "required_words": []
+    }
+]
+  
